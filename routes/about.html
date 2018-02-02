@@ -1,0 +1,32 @@
+<:Head>
+	<title>About</title>
+</:Head>
+
+<Layout page='about'>
+	<h1>About this site</h1>
+
+	<p>This is the 'about' page. There's not much here.</p>
+
+	<Slotted num="{{num}}" bind:computedNum="computedNum">
+		<p style="color: red;">
+			{{computedNum}}
+		</p>
+	</Slotted>
+</Layout>
+
+<script>
+	import Layout from './_components/Layout.html';
+	import Slotted from './_components/Slotted.html';
+
+	export default {
+		data() {
+			return {
+				num: 1
+			};
+		},
+		components: {
+			Layout,
+			Slotted
+		}
+	};
+</script>

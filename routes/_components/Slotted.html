@@ -1,0 +1,29 @@
+<select bind:value="someState">
+	<option>a</option>
+	<option>b</option>
+	<option>c</option>
+</select>
+
+<slot>
+	<span>{{computedNum}}</span>
+</slot>
+
+{{someState}}
+
+<script>
+	export default {
+		data() {
+			return {
+				someState: 'a'
+			};
+		},
+		computed: {
+			computedNum(num, someState) {
+				if (!num)
+					return;
+
+				return `${someState}:${num}`;
+			}
+		}
+	};
+</script>
